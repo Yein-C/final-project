@@ -13,7 +13,20 @@ sudo apt-get upgrade
 있으면 좋은 것: sudo apt-get vim
 
 
-1. git clone
--------------
-cd ~ 이나 cd
-git clone https://github.com/Yein-C/final-project.git
+#1. git clone
+
+	-cd ~ 이나 cd
+	-git clone https://github.com/Yein-C/final-project.git
+
+#2. 소리를 위해서
+	
+	-sudo apt-get install alsa-utils
+	-sudo amixer cset numid=3 n
+	 (n= 0, 1, 2 / 0: auto, 1: 아날로그-사운드 잭, 2: hdmi)
+
+	test:
+	-aplay /usr/share/sounds/alsa/Front-Right.wav
+
+	음량조절:
+	-alsamixer
+
