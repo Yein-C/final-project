@@ -14,12 +14,10 @@
  - 60'c > T >= 55'C : 잠시 쉬었다 하는 것 추천
  - 55'c > T >= 40'C : 표준
  - 0'c >= T : 1분 뒤 강제 종료
+   * 강제종료를 종료 : sudo shutdown -c
 
 nano
  - 선택하라고 하면 'nano' 선택 (여기에서는 반복 작업 만들 때)
-
-###### *강제종료를 종료 : sudo shutdown -c
-
 
 주의!
 =====
@@ -87,7 +85,12 @@ nano
 	|  |  |  .------- 월 (1 - 12) OR jan,feb,mar,apr ...
 	|  |  |  |  .---- 요일 (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 	|  |  |  |  |
-######  *  *  *  *  * user-name command to be executed
+	*  *  *  *  * user-name command to be executed
+
+	자세한 설명 및 참고
+	 - cat /etc/crontab
+	 - https://server-talk.tistory.com/10
+	 - 
 	
 	주기 시간 변경
 	* * * * * : 매 분마다
