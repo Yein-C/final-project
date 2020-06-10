@@ -17,7 +17,7 @@
    * 강제종료를 종료 : sudo shutdown -c
 
 nano
- - 선택하라고 하면 'nano' 선택 (여기에서는 반복 작업 만들 때)
+ - 선택하라고 하면 'nano' 선택 (이 프로젝트에서는 반복 작업 만들 때)
 
 주의!
 =====
@@ -70,7 +70,6 @@ nano
 	
 	# 으로 시작하는 주석들 맨 밑, 새로운 내용을 추가할 수 있는 곳
 	- * * * * * ~/final-project/main
-	
 	.
 	.
 	# ~~~
@@ -90,7 +89,6 @@ nano
 	자세한 설명 및 참고
 	 - cat /etc/crontab
 	 - https://server-talk.tistory.com/10
-	 - 
 	
 	주기 시간 변경
 	* * * * * : 매 분마다
@@ -101,8 +99,7 @@ nano
 	- cd /etc/profile.d
 	- sudo nano bash_completion.sh
 
-	맨 밑 # 과 그 위 # 중간에 원하는 명령어 입력
-	
+	맨 밑 # 과 그 위 # 중간에 원하는 명령어 입력	
 	.
 	.
 	fi
@@ -119,7 +116,7 @@ nano
 	- sudo service apache2 restart
 	- sudo apt-get install postfix
 	postfix configuration 여기서는 상관 없습니다.
- 	전  no configuration으로 했습니다.
+ 	전 no configuration으로 했습니다.
 	
 	- cd /var/www
 
@@ -137,8 +134,8 @@ nano
 
 	들어가는 법:
 	 1. 자신의 라즈베리파이 주소 입력 후 raspcontrol 들어가기
-	 2. "자신의 라즈베리파이 주소"/raspcontrol  (큰 따옴표 작성X)
-	 3. "자신의 라즈베리파이 주소"/index.php  (큰 따옴표 작성X)
+	 2. " 자신의 라즈베리파이 주소 "/raspcontrol  (큰 따옴표 작성X)
+	 3. " 자신의 라즈베리파이 주소 "/index.php  (큰 따옴표 작성X)
 
 	방금 만든 ID, PASSWORD 입력
 	
@@ -153,20 +150,20 @@ nano
 
 ### 유용성
 	
-	기기가 과열되어 망가지는 것을 방지한다.
+	기기가 과열되어 망가지는 것을 방지합니다.
 	 - 라즈베리파이에 전원을 연결하고 방치되어 있을 때.
-	 - 오랜 사용으로 기기가 과열된지도 모르고 사용 중 일 때.
+	 - 오랜 사용으로 기기가 과열된지 모르고 사용 중 일 때.
 
 ### 개선방향
 
-	더 많은 사운드와 센서를 통해
-	사용자가 정보를 더 쉽게 깨달을 수 있게 할 것.
+	- 더 많은 사운드와 센서를 통해 사용자가 정보를 더 쉽게 깨달을 수 있게 할 필요가 있습니다.
 
 
 #### 기여한 것
 
 	다른 사람의 아이디어:
 	 raspcontrol
+	 crontab 설명
 
 	그 외:
-	 제가 직접 블로그 및 사이트들을 뒤져가며 혼자 만들었습니다.
+	 제가 직접 블로그 및 사이트들을 찾아가며 만들었습니다.
