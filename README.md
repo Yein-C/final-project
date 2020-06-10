@@ -15,6 +15,9 @@
  - 55'c > T >= 40'C : 표준
  - 0'c >= T : 1분 뒤 강제 종료
 
+nano
+ - 선택하라고 하면 'nano' 선택 (여기에서는 반복 작업 만들 때)
+
 ###### *강제종료를 종료 : sudo shutdown -c
 
 
@@ -25,44 +28,75 @@
 
 시작 전 필수
 ------------
-sudo apt-get update
-sudo apt-get upgrade
+ - sudo apt-get update
+ - sudo apt-get upgrade
 
 있으면 좋은 것: sudo apt-get vim
 
 
 # 1. git clone
 
-	-cd ~ 또는 cd
-	-git clone https://github.com/Yein-C/final-project.git
+	- cd ~ 또는 cd
+	- git clone https://github.com/Yein-C/final-project.git
 
 # 2. 소리를 위해서
 	
-	-sudo apt-get install alsa-utils
-	-sudo amixer cset numid=3 n
+	- sudo apt-get install alsa-utils
+	- sudo amixer cset numid=3 n
 	 (n= 0, 1, 2 / 0: auto, 1: 아날로그-사운드 잭, 2: hdmi)
 
 	test:
-	-aplay /usr/share/sounds/alsa/Front-Right.wav
+	- aplay /usr/share/sounds/alsa/Front-Right.wav
 
 	음량조절:
-	-alsamixer
+	- alsamixer
 
 # 3. 컴파일
 
-	-cd ~/final-project
-	-g++ main.cpp -o main
+	- cd ~/final-project
+	- g++ main.cpp -o main
 
 # 4. 어느 위치에서든지 상관없이 온도 확인하고 싶을 때
 
-	-alias temp='~/final-project/PATH/path'
+	- alias temp='~/final-project/path'
 	
 	temp대신 원하는 다른 것 가능
 
-# 5. 터미널 시작 전, 시작할 때, 종료한 후 등등 상관없이 프로그램 유지
+# 5. 작업 중 반복 실행(예약)
+	
+	- crontab -e
+	 
+	 crontab -e : 예약 추가
+	 crontab -l : 목록 확인
+	 crontab -r : 예약 삭제
+	
+	# 으로 시작하는 주석들 맨 밑, 새로운 내용을 추가할 수 있는 곳
+	- * * * * * ~/final-project/main
+	
+	.
+	.
+	# ~~~
+	# ~~~
+	* * * * * ~/final-project/main
 
-	-cd /etc/profile.d
-	-sudo nano bash_completion.sh
+	crontab 설명
+	
+	.---------------- 분 (0 - 59)
+	|  .------------- 시간 (0 - 23)
+	|  |  .---------- 일 (1 - 31)
+	|  |  |  .------- 월 (1 - 12) OR jan,feb,mar,apr ...
+	|  |  |  |  .---- 요일 (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+	|  |  |  |  |
+######  *  *  *  *  * user-name command to be executed
+	
+	주기 시간 변경
+	* * * * * : 매 분마다
+	*/10 * * * * : 10분마다
+	
+# 6. 터미널 시작 전, 시작할 때, 종료한 후 등등 상관없이 프로그램 유지
+
+	- cd /etc/profile.d
+	- sudo nano bash_completion.sh
 
 	맨 밑 # 과 그 위 # 중간에 원하는 명령어 입력
 	
@@ -78,25 +112,25 @@ sudo apt-get upgrade
 
 ## 같이 쓰면 좋은 '라즈베리파이 상태 확인하는 주소'raspcontrol' '
 
-	-sudo apt-get install apache2
-	-sudo service apache2 restart
-	-sudo apt-get install postfix
+	- sudo apt-get install apache2
+	- sudo service apache2 restart
+	- sudo apt-get install postfix
 	postfix configuration 여기서는 상관 없습니다.
  	전  no configuration으로 했습니다.
 	
-	-cd /var/www
+	- cd /var/www
 
 	원래 있던 파일은 새로운 directory를 만들어 그 안에 집어 넣고
 	아래 실행 
-	-sudo git clone https://github.com/harmon25/raspcontrol.git
-	-sudo vim /etc/raspcontrol/database.aptmnt
+	- sudo git clone https://github.com/harmon25/raspcontrol.git
+	- sudo vim /etc/raspcontrol/database.aptmnt
 
 	{
 		"user": " 큰 따옴표 안에 넣으세요. "
 		"password": "   "
 	}
 
-	-sudo chmod 755 /etc/raspcontrol/database.aptmnt
+	- sudo chmod 755 /etc/raspcontrol/database.aptmnt
 
 	들어가는 법:
 	 1. 자신의 라즈베리파이 주소 입력 후 raspcontrol 들어가기
