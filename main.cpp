@@ -15,9 +15,8 @@ int main() {
 
 	system("cat /sys/class/thermal/thermal_zone0/temp > cpu.txt");
 	fc.open("cpu.txt");
-
 	getline(fc, cpu);
-	
+
 	cpu_tem=stod(cpu);
 	cpu_tem/=1000;
 	if(cpu_tem>=70){
@@ -46,18 +45,21 @@ int main() {
 		cout<<"Why don't you turn off the RASPBERRY PI and take a break?"<<endl;
 	}
 	else if(cpu_tem>=40){
-		system("aplay /usr/share/sounds/alsa/Noise.wav");
+		system("aplay /usr/share/sounds/alsa/Side_Left.wav");
 		cout<<"55'c~40'c  testing"<<endl;
 	}
 
 	
 	if(cpu_tem<=0){
-		system("aplay /usr/share/sounds/alsa/Side_Left.wav");
+		system("aplay /usr/share/sounds/alsa/Noise.wav");
 		cout<<"0'c. SHUTDOWN after 1m"<<endl;
 		system("sudo shutdown -h 1");
 	}
 	
 	cout<<"cpu: "<<cpu_tem<<"'c"<<endl;
+	
 	system("mv ~/cpu.txt ~/final-project/");
+	fc.close();
+
 	return 0;
 }
