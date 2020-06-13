@@ -35,7 +35,7 @@ int main() {
 		cout<<"  sudo shutdown -c  "<<endl<<endl;
 	}
 	else if(cpu_tem>=60){
-		system("aplay /usr/share/sounds/alsa/Side_Right.wav");
+		system("ffplay ~/final-project/sound/Alarm_Clock.mp3");
 		cout<<endl<<"cpu:  65'c ~ 60'c(82%)."<<endl;
 		cout<<"Maybe turned off while in use"<<endl<<endl;
 	}
