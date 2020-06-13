@@ -6,7 +6,7 @@
 영상주소: 
 
 영상 시청시 참고사항
- - 시간이 엇어서 전개가 빠를 수 있습니다.
+ - 시간이 없어서 전개가 빠를 수 있습니다.
  - 라즈베리파이에 이어폰을 연결하고,
    그 소리를 핸드폰에 저장하고,
    저장 파일을 영상에 넣었습니다.
@@ -78,12 +78,18 @@ nano
 	- g++ main.cpp -o main
 
 # 4. 어느 위치에서든지 상관없이 온도 확인하고 싶을 때
-
+	
+	재부팅시 삭제
 	- alias temp='~/final-project/path'
 	
-	temp대신 원하는 다른 것 가능
-
 	영구적으로 설정
+	- sudo vi ~/.bashrc   (sudo vim ~/.bashrc)
+	# some more ls aliases 라고 적혀있는 부분 밑에 아래 문장 입력
+	alias temp='~/final-project/path'
+	
+	temp대신 원하는 다른 것 사용가능
+
+	참고
 	http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=22
 
 # 5. 작업 중 반복 실행(예약)
